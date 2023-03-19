@@ -6,7 +6,6 @@ import altair as alt
 import geopandas as gpd
 from dash import Dash, dcc, html, Input, Output
 
-import dash_bootstrap_components as dbc
 
 alt.data_transformers.disable_max_rows()
 
@@ -19,8 +18,8 @@ def get_time(military_hour):
 
 
 # read the data
-geo_json_url = "https://raw.githubusercontent.com/UBC-MDS/vancouver_crime_dashboard/main/data/van_nb.geojson"
-processed_data = pd.read_csv("data/raw/crimedata_csv_AllNeighbourhoods_AllYears.csv")
+geo_json_url = "https://raw.githubusercontent.com/tzoght/vancrime/main/data/geo/van_nb.geojson"
+processed_data = pd.read_csv("https://raw.githubusercontent.com/tzoght/vancrime/main/data/raw/crimedata_csv_AllNeighbourhoods_AllYears.csv")
 processed_data.reset_index(drop=True, inplace=True)
 processed_data["TIME"] = processed_data["HOUR"].apply(lambda x: get_time(x))
 # wrangle the data
@@ -36,11 +35,14 @@ unique_hoods = np.sort(processed_data["NEIGHBOURHOOD"].unique())
 unique_crimetype = np.sort(processed_data["TYPE"].unique())
 unique_years = np.sort(processed_data["YEAR"].unique())
 
+# theme
+theme = dbc.themes.BOOTSTRAP;
+
 # App server
 app = Dash(
     __name__,
     title="Vancouver Crime Dashboard",
-    external_stylesheets=[dbc.themes.BOOTSTRAP],
+    external_stylesheets=[theme],
 )
 server = app.server
 
@@ -72,6 +74,7 @@ card1 = dbc.Card(
     style={"width": "20rem", "marginLeft": 20},
     body=True,
     color="light",
+    className="mb-2",
 )
 
 # Filters and control cards
@@ -115,6 +118,7 @@ card2 = dbc.Card(
     style={"width": "20rem", "marginLeft": 20},
     body=True,
     color="light",
+    className="mb-2",
 )
 
 # information
@@ -147,6 +151,7 @@ card3 = dbc.Card(
     style={"width": "20rem", "marginLeft": 20},
     body=True,
     color="light",
+    className="mb-2",
 )
 
 """Layouts"""
