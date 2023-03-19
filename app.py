@@ -28,7 +28,7 @@ processed_data = processed_data.dropna()
 years = np.sort(processed_data["YEAR"].unique())
 # remove the the last year data as it is incomplete
 processed_data = processed_data[processed_data["YEAR"] != years[-1]]
-processed_data = processed_data.sample(frac=0.25, random_state=0)
+processed_data = processed_data.sample(frac=0.05, random_state=0)
 
 # selection elements
 unique_hoods = np.sort(processed_data["NEIGHBOURHOOD"].unique())
