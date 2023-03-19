@@ -1,7 +1,9 @@
-pip==21.3.1
-altair==4.2.2
-dash==2.9.1
-flask==2.2.3
 pandas
-geopandas==0.12.2
-numpy==1.24.2
+gunicorn
+altair
+dash
+dash_bootstrap_components
+plotly
+geopandas
+numpy
+utm
