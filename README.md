@@ -1,4 +1,6 @@
-![https://vancrime.onrender.com](img/render.png)
+![](img/render.png)
+
+[Live Application](https://vancrime.onrender.com)
 
 # Vancouver crime data (2003-2022)
 
