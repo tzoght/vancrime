@@ -13,6 +13,7 @@ dependencies:
   - dash
   - flask
   - pandas
+  - geopandas
   - numpy
   - pip:
       - dash_bootstrap_components
