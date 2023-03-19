@@ -1,6 +1,6 @@
-altair == 4.2.2
-dash == 2.9.1
-flask == 2.2.3
-pandas == 1.5.3
-geopandas == 0.12.2
-numpy == 1.24.2
+altair==4.2.2
+dash==2.9.1
+flask==2.2.3
+pandas==1.5.3
+geopandas==0.12.2
+numpy==1.24.2
